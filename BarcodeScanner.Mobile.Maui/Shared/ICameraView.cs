@@ -68,7 +68,7 @@ namespace BarcodeScanner.Mobile
         public CaptureQuality CaptureQuality { get; set; }
 
         public event EventHandler<OnDetectedEventArg> OnDetected;
-        public void TriggerOnDetected(List<BarcodeResult> barCodeResults, byte[] imageData);
+        public void TriggerOnDetected(List<BarcodeResult> barCodeResults, Size imageSize, byte[] imageData);
 
     }
 }

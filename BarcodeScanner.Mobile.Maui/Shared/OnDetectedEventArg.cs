@@ -8,6 +8,7 @@ namespace BarcodeScanner.Mobile
     {
         public List<BarcodeResult> BarcodeResults { get; set; }
         public byte[] ImageData { get; set; }
+        public Size ImageSize { get; set; }
         public OnDetectedEventArg()
         {
             ImageData = new byte[0];

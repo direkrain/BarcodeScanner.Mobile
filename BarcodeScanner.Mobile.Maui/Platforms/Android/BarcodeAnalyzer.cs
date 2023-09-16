@@ -60,7 +60,7 @@ namespace BarcodeScanner.Mobile.Platforms.Android
                     }
 
                     _cameraView.IsScanning = false;
-                    _cameraView.TriggerOnDetected(final, imageData);
+                    _cameraView.TriggerOnDetected(final, new Microsoft.Maui.Graphics.Size(mediaImage.Width, mediaImage.Height), imageData);
                     if (_cameraView.VibrationOnDetected)
                         Vibration.Vibrate(200);
                 }

@@ -147,7 +147,7 @@ namespace BarcodeScanner.Mobile
                     DisplayValue = mapped.DisplayValue,
                     RawValue = mapped.RawValue,
                     CornerPoints = cornerPoints.ToArray(),
-                    RawData = mapped.GetRawBytes()
+                    RawData = mapped.GetRawBytes(),
                 });
             }
 

@@ -168,7 +168,12 @@ namespace BarcodeScanner.Mobile.Platforms.iOS
                             }
                         }
 
-                        OnDetected?.Invoke(new OnDetectedEventArg { BarcodeResults = resultList, ImageData = imageDataByteArray });
+                        OnDetected?.Invoke(
+                            new OnDetectedEventArg { 
+                                BarcodeResults = resultList, 
+                                ImageData = imageDataByteArray,
+                                ImageSize = new Size(image.Size.Width, image.Size.Height)
+                            });
                     });
                 }
                 catch (Exception exception)

@@ -159,12 +159,12 @@ namespace BarcodeScanner.Mobile
         }
 
         public event EventHandler<OnDetectedEventArg> OnDetected;
-        public void TriggerOnDetected(List<BarcodeResult> barCodeResults, byte[] imageData)
+        public void TriggerOnDetected(List<BarcodeResult> barCodeResults, Size imageSize, byte[] imageData)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                OnDetected?.Invoke(this, new OnDetectedEventArg { BarcodeResults = barCodeResults, ImageData = imageData });
-                OnDetectedCommand?.Execute(new OnDetectedEventArg { BarcodeResults = barCodeResults, ImageData = imageData });
+                OnDetected?.Invoke(this, new OnDetectedEventArg { BarcodeResults = barCodeResults, ImageData = imageData, ImageSize=imageSize });
+                OnDetectedCommand?.Execute(new OnDetectedEventArg { BarcodeResults = barCodeResults, ImageData = imageData, ImageSize = imageSize });
             });
         }
 
